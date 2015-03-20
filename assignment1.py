@@ -103,5 +103,15 @@ def print_before(text, marker):
       marker is a string
 
     """
-    print(text, marker)
+    if type(text) != list:
+        print("Expected a list of words")
+        return
+    if type(marker) != str:
+        print("Expected a string")
+        return
+
+    if text.count(marker) < 1:
+        print(text)
+    else:
+        print(text[:text.index(marker)])
 
