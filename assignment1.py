@@ -2,6 +2,9 @@
 # This Python file uses the following encoding: utf-8
 import math
 
+def test():
+    for t in range(0,10):
+        distance(t,9.8)
 """
 This module contains the functions that relate to the first three
 lectures of the course (basic training and lists). 
@@ -21,7 +24,8 @@ def distance(t, accel):
        accel is a float
 
     """
-    print(t,accel)
+    distance = (0.5 * accel * (t**2))
+    print(round(distance, 1))
 
 def pythagoras(a, b):
     """Find the length of a third side of a triangle.
