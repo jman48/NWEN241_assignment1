@@ -46,8 +46,10 @@ def pythagoras(a, b):
     """
     if a <= 0:
         print("First leg is invalid")
+        return
     elif b <= 0:
         print("Second leg is invalid")
+        return
 
     leg = (a**2) + (b**2)
     leg_length = math.sqrt(leg)
