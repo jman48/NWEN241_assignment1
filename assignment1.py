@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # This Python file uses the following encoding: utf-8
+import math
 
 """
 This module contains the functions that relate to the first three
@@ -43,7 +44,15 @@ def pythagoras(a, b):
        b is an integer or float
 
     """
-    print(a,b)
+    if a <= 0:
+        print("First leg is invalid")
+    elif b <= 0:
+        print("Second leg is invalid")
+
+    leg = (a**2) + (b**2)
+    leg_length = math.sqrt(leg)
+        
+    print(round(leg_length, 1))
 
 def grade(mark,mcr):
     """Assign a letter grade based on a mark
