@@ -2,9 +2,6 @@
 # This Python file uses the following encoding: utf-8
 import math
 
-def test():
-    for t in range(0,10):
-        distance(t,9.8)
 """
 This module contains the functions that relate to the first three
 lectures of the course (basic training and lists). 
@@ -50,15 +47,13 @@ def pythagoras(a, b):
     """
     if a <= 0:
         print("First leg is invalid")
-        return
     elif b <= 0:
         print("Second leg is invalid")
-        return
-
-    leg = (a**2) + (b**2)
-    leg_length = math.sqrt(leg)
-        
-    print(round(leg_length, 1))
+    else:
+        leg_sqrd = (a**2) + (b**2)
+        leg_length = math.sqrt(leg_sqrd)
+            
+        print(round(leg_length, 1))
 
 def grade(mark,mcr):
     """Assign a letter grade based on a mark
@@ -86,7 +81,22 @@ def grade(mark,mcr):
         if have not met them), if not boolean print "Invalid mcr"
 
     """
-    print(mark, mcr)
+    if type(mark) != int:
+        print("Invalid mark")
+    elif type(mcr) != bool:
+        print("Invalid mcr")
+    elif mcr != True:
+        print("K")
+    elif 80 <= mark <= 100:
+        print("A")
+    elif 65 <= mark < 80:
+        print("B")
+    elif 50 <= mark < 65:
+        print("C")
+    elif 40 <= mark < 50:
+        print("D")
+    else:        
+        print("E")
 
 def print_before(text, marker):
     """Print a list of word up to first occurrence of marker word
@@ -111,12 +121,9 @@ def print_before(text, marker):
     """
     if type(text) != list:
         print("Expected a list of words")
-        return
-    if type(marker) != str:
+    elif type(marker) != str:
         print("Expected a string")
-        return
-
-    if text.count(marker) < 1:
+    elif text.count(marker) < 1:    #Check if marker is in text
         print(text)
     else:
         print(text[:text.index(marker)])
