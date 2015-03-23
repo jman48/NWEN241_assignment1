@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # This Python file uses the following encoding: utf-8
-import math
 
 """
 This module contains the functions that relate to the first three
@@ -51,7 +50,7 @@ def pythagoras(a, b):
         print("Second leg is invalid")
     else:
         leg_sqrd = (a**2) + (b**2)
-        leg_length = math.sqrt(leg_sqrd)
+        leg_length = leg_sqrd**(0.5)
             
         print(round(leg_length, 1))
 
@@ -127,4 +126,3 @@ def print_before(text, marker):
         print(text)
     else:
         print(text[:text.index(marker)])
-
